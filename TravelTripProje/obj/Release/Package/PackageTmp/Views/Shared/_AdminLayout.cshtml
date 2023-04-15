@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">Menüler</h3>
+        <a href="/Admin/Index" class="w3-bar-item w3-button"><h4>Bloglar</h4></a>
+        <a href="/Admin/YorumListesi" class="w3-bar-item w3-button"><h4>Yorumlar</h4></a>
+        <a href="/Admin/iletisim" class="w3-bar-item w3-button"><h4>İletişim</h4></a>
+        <a href="/Admin/hakkimizda" class="w3-bar-item w3-button"><h4>Hakkımızda</h4></a>
+        <a href="/Default/Index" class="w3-bar-item w3-button"><h4>Siteye Git</h4></a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+            <h4 style="display:inline-block;">Admin Yönetim Paneli</h4>
+            <a href="/Girisyap/LogOut/" class="w3-bar-item w3-button" style="float:right;"><h4>Çıkış Yap</h4></a>
+
+        </div>
+
+        
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿@model TravelTripProje.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme</h2>
+<br />
+
+@* 1.parametre bu beginform ne zaman çalışacak: BlogGuncelle action devreye girdiği zaman *@
+@* 2.parametre bu devreye giricek action nerede hangi controller da : Admin controllerda *@
+@* 3.parametre bu blogguncelle actionu ne zaman çalışacak : formda gönder duşuna bastığımızda yani post olduğunda. *@
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", style = "width:50%;",@readonly="readonly" })
+    <br />
+    @Html.LabelFor(x => x.Baslik)
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", style = "width:50%;" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", style = "width:50%;" })
+    <br />
+    @Html.LabelFor(x => x.BlogImage)
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", style = "width:50%;" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", style = "width:50%; height:150px;" })
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+}

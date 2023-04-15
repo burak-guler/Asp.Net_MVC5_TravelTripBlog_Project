@@ -1,0 +1,29 @@
+﻿@model TravelTripProje.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelleme</h2>
+<br />
+
+@* 1.parametre bu beginform ne zaman çalışacak: BlogGuncelle action devreye girdiği zaman *@
+@* 2.parametre bu devreye giricek action nerede hangi controller da : Admin controllerda *@
+@* 3.parametre bu blogguncelle actionu ne zaman çalışacak : formda gönder duşuna bastığımızda yani post olduğunda. *@
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", style = "width:50%;", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.KullaniciAdi)
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", style = "width:50%;" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", style = "width:50%;" })
+    <br />
+    @Html.LabelFor(x => x.Yorum)
+    @Html.TextAreaFor(x => x.Yorum, new { @class = "form-control", style = "width:50%; height:150px;" })
+    <br />
+    <button class="btn btn-success">Yorum Güncelle</button>
+}
+

@@ -1,0 +1,40 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Yorumlar>
+
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Listesi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align:center;">ID</th>
+            <th style="text-align:center;">KULLANICI </th>
+            <th style="text-align:center;">MAİL</th>
+            <th style="text-align:center;">YORUM</th>
+            <th style="text-align:center;">BLOG</th>
+            <th style="text-align:center;">SİL</th>
+            <th style="text-align:center;">GÜNCELLE</th>
+            <th style="text-align:center;">DETAYLAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center;">@item.ID</td>
+                <td style="text-align:center;">@item.KullaniciAdi</td>
+                <td style="text-align:center;">@item.Mail</td>
+                <td style="text-align:center;">@item.Yorum</td>
+                <td style="text-align:center;">@item.Blog.Baslik</td>
+                <td style="text-align:center;"><a href="/Admin/YorumGetir/@item.ID" class="btn btn-warning">Güncelle</a></td>
+                <td style="text-align:center;"><a href="/Admin/YorumSil/@item.ID" class="btn btn-danger">Sil</a></td>
+                <td style="text-align:center;"><a href="/Blog/BlogDetay/@item.Blogid" class="btn btn-default">Detaylar</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
